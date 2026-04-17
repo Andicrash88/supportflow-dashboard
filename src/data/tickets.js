@@ -1,4 +1,4 @@
-export const tickets = [
+export const seedTickets = [
   {
     id: "TCK-1048",
     subject: "Billing mismatch on annual renewal",
@@ -40,3 +40,5 @@ export const tickets = [
     channel: "Email",
   },
 ];
+
+export const tickets = seedTickets;

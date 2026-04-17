@@ -9,12 +9,13 @@ import {
   getUpcomingTasks,
   getWeeklyTicketVolume,
 } from "@/features/dashboard/lib/dashboardSelectors";
-import { tickets } from "@/data/tickets";
 import { tasks } from "@/data/tasks";
 import { usePageTitle } from "@/hooks/usePageTitle";
+import { useTickets } from "@/hooks/useTickets";
 
 export function DashboardPage() {
   usePageTitle("Dashboard");
+  const { tickets } = useTickets();
   const metrics = getDashboardMetrics(tickets, tasks);
   const recentTickets = getRecentTickets(tickets);
   const upcomingTasks = getUpcomingTasks(tasks);
