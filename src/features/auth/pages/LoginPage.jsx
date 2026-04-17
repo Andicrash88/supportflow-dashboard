@@ -12,10 +12,10 @@ export function LoginPage() {
   usePageTitle("Login");
 
   return (
-    <main className="min-h-screen bg-hero-grid px-4 py-6 sm:px-6 lg:px-8">
+    <main className="min-h-screen px-4 py-6 sm:px-6 lg:px-8">
       <div className="mx-auto flex min-h-[calc(100vh-3rem)] max-w-6xl items-center justify-center">
         <div className="grid w-full max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <section className="flex flex-col justify-between rounded-[32px] border border-white/60 bg-ink-950 p-8 text-white shadow-panel sm:p-10">
+          <section className="flex flex-col justify-between rounded-[32px] border border-white/60 bg-ink-950 p-8 text-white shadow-panel dark:border-slate-800 dark:bg-slate-950 sm:p-10">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-brand-200">
                 <Sparkles className="h-4 w-4" />
@@ -61,11 +61,11 @@ export function LoginPage() {
             </div>
           </section>
 
-          <section className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-panel sm:p-10">
+          <section className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-panel dark:border-slate-800 dark:bg-slate-950 sm:p-10">
             <div className="mb-8">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-brand-700">Sign in</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Welcome back</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-500">
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 dark:text-slate-50">Welcome back</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                 Enter your workspace email and password to continue into SupportFlow.
               </p>
             </div>

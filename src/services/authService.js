@@ -49,6 +49,22 @@ export const authService = {
 
     return user;
   },
+  updateProfile: (updates) => {
+    const session = readStoredSession();
+
+    if (!session) {
+      return null;
+    }
+
+    const nextUser = {
+      ...session,
+      ...updates,
+    };
+
+    window.localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(nextUser));
+
+    return nextUser;
+  },
   logout: () => {
     if (typeof window === "undefined") {
       return;

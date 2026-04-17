@@ -60,7 +60,7 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
         <div className="grid gap-5 md:grid-cols-2">
           <Field label="Task title" required>
             <input
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
               name="title"
               onChange={handleChange}
               placeholder="Describe the follow-up work"
@@ -71,7 +71,7 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
           </Field>
           <Field label="Owner" required>
             <input
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
               name="owner"
               onChange={handleChange}
               placeholder="Assigned teammate"
@@ -82,7 +82,7 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
           </Field>
           <Field label="Due date" required>
             <input
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
               name="dueDate"
               onChange={handleChange}
               required
@@ -92,7 +92,7 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
           </Field>
           <Field label="Status">
             <select
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
               name="status"
               onChange={handleChange}
               value={formValues.status}
@@ -106,7 +106,7 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
           </Field>
           <Field label="Category">
             <select
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white"
+              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
               name="category"
               onChange={handleChange}
               value={formValues.category}
@@ -120,9 +120,9 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
           </Field>
         </div>
 
-        <div className="flex items-center justify-end gap-3 border-t border-slate-200 pt-5">
+        <div className="flex items-center justify-end gap-3 border-t border-slate-200 pt-5 dark:border-slate-800">
           <button
-            className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950"
+            className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:text-slate-50"
             onClick={onClose}
             type="button"
           >
@@ -143,7 +143,7 @@ export function TaskFormModal({ mode, onClose, onSubmit, task }) {
 function Field({ children, label, required = false }) {
   return (
     <label className="block">
-      <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
+      <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
         {label}
         {required ? " *" : ""}
       </span>

@@ -32,6 +32,11 @@ export function AuthProvider({ children }) {
         authService.logout();
         setUser(null);
       },
+      updateProfile: (updates) => {
+        const nextUser = authService.updateProfile(updates);
+        setUser(nextUser);
+        return nextUser;
+      },
     }),
     [isLoading, user],
   );

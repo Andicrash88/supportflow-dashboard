@@ -42,13 +42,13 @@ export function LoginForm() {
   return (
     <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-slate-700">Work email</span>
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100">
-          <Mail className="h-4 w-4 text-slate-400" />
+        <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Work email</span>
+        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100 dark:border-slate-700 dark:bg-slate-900 dark:focus-within:border-brand-500 dark:focus-within:ring-brand-900/40">
+          <Mail className="h-4 w-4 text-slate-400 dark:text-slate-500" />
           <input
             {...register("email")}
             autoComplete="email"
-            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400"
+            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
             placeholder="name@company.com"
             type="email"
           />
@@ -57,13 +57,13 @@ export function LoginForm() {
       </label>
 
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-slate-700">Password</span>
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100">
-          <LockKeyhole className="h-4 w-4 text-slate-400" />
+        <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Password</span>
+        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100 dark:border-slate-700 dark:bg-slate-900 dark:focus-within:border-brand-500 dark:focus-within:ring-brand-900/40">
+          <LockKeyhole className="h-4 w-4 text-slate-400 dark:text-slate-500" />
           <input
             {...register("password")}
             autoComplete="current-password"
-            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400"
+            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
             placeholder="Enter your password"
             type="password"
           />
@@ -72,7 +72,7 @@ export function LoginForm() {
       </label>
 
       {errors.root ? (
-        <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+        <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/40 dark:text-rose-300">
           {errors.root.message}
         </div>
       ) : null}

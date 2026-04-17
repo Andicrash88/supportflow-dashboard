@@ -2,6 +2,16 @@ export function cn(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+export function getInitials(value = "") {
+  return value
+    .split(" ")
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
 export function parseDateInput(value) {
   if (value instanceof Date) {
     return value;

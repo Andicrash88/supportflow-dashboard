@@ -11,7 +11,7 @@ const navigation = [
 
 export function Sidebar() {
   return (
-    <aside className="flex h-full w-full flex-col rounded-[28px] border border-white/60 bg-ink-950 px-5 py-6 text-white shadow-panel">
+    <aside className="flex h-full w-full flex-col rounded-[28px] border border-white/60 bg-ink-950 px-5 py-6 text-white shadow-panel dark:border-slate-800 dark:bg-slate-950">
       <div className="flex items-center gap-3 border-b border-white/10 pb-6">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-600">
           <LifeBuoy className="h-5 w-5" />
@@ -40,10 +40,10 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="mt-auto rounded-3xl bg-white/5 p-4">
-        <p className="text-sm font-medium">Phase 1 scaffold</p>
+      <div className="mt-auto rounded-3xl bg-white/5 p-4 dark:bg-slate-900/80">
+        <p className="text-sm font-medium">Workspace polish</p>
         <p className="mt-2 text-sm leading-6 text-slate-400">
-          The navigation shell is ready for auth guards, nested modules, and API-backed workflows.
+          Profile preferences, tickets, tasks, and dashboard workflows now share persistent local state.
         </p>
       </div>
     </aside>

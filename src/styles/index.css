@@ -11,6 +11,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root.dark {
+  color: #e2e8f0;
+  background-color: #020617;
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,6 +28,22 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(53, 127, 101, 0.18), transparent 32%),
+    linear-gradient(rgba(8, 16, 24, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 16, 24, 0.04) 1px, transparent 1px);
+  background-color: #f8fafc;
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+:root.dark body {
+  background:
+    radial-gradient(circle at top, rgba(53, 127, 101, 0.16), transparent 35%),
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-color: #020617;
+  background-size: 100% 100%, 32px 32px, 32px 32px;
 }
 
 button,
@@ -29,6 +51,17 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 a {
