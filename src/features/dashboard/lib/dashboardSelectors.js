@@ -33,8 +33,10 @@ function getTicketDateRange(tickets) {
 }
 
 function getReferenceDate(tickets, tasks) {
-  if (tasks.length) {
-    return [...tasks]
+  const actionableTasks = tasks.filter((task) => task.status !== "Completed");
+
+  if (actionableTasks.length) {
+    return [...actionableTasks]
       .map((task) => startOfDay(task.dueDate))
       .sort((left, right) => left - right)[0];
   }
@@ -88,10 +90,11 @@ export function getUpcomingTasks(tasks) {
   const today = getReferenceDate([], tasks);
 
   return [...tasks]
-    .filter((task) => getDayDifference(task.dueDate, today) >= 0)
+    .filter((task) => task.status !== "Completed" && getDayDifference(task.dueDate, today) >= 0)
     .sort((left, right) => startOfDay(left.dueDate) - startOfDay(right.dueDate))
     .map((task) => ({
       ...task,
+      category: task.category || task.type,
       dueLabel: getTaskDueLabel(task.dueDate, today),
       formattedDueDate: formatLongDate(task.dueDate),
     }));

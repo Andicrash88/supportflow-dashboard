@@ -6,6 +6,7 @@ const badgeStyles = {
     "In Progress": "bg-sky-50 text-sky-700 ring-sky-200",
     Pending: "bg-slate-100 text-slate-700 ring-slate-200",
     Resolved: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+    Completed: "bg-emerald-50 text-emerald-700 ring-emerald-200",
     Planned: "bg-indigo-50 text-indigo-700 ring-indigo-200",
     Blocked: "bg-rose-50 text-rose-700 ring-rose-200",
     online: "bg-emerald-50 text-emerald-700 ring-emerald-200",

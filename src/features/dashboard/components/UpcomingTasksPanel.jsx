@@ -19,7 +19,7 @@ export function UpcomingTasksPanel({ tasks }) {
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-700">{task.id}</p>
                   <p className="mt-2 font-medium text-slate-900">{task.title}</p>
-                  <p className="mt-1 text-sm text-slate-500">{task.type}</p>
+                  <p className="mt-1 text-sm text-slate-500">{task.category}</p>
                 </div>
                 <StatusBadge value={task.status} />
               </div>
