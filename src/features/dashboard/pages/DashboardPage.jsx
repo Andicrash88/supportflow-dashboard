@@ -1,32 +1,41 @@
-import { Inbox, ListChecks, Clock3, TrendingUp } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { StatCard } from "@/components/ui/StatCard";
-import { TicketVolumeChart } from "@/components/charts/TicketVolumeChart";
-import { QueueSnapshot } from "@/features/dashboard/components/QueueSnapshot";
+import { DashboardStats } from "@/features/dashboard/components/DashboardStats";
+import { RecentTicketsCard } from "@/features/dashboard/components/RecentTicketsCard";
+import { TicketVolumeChartCard } from "@/features/dashboard/components/TicketVolumeChartCard";
+import { UpcomingTasksPanel } from "@/features/dashboard/components/UpcomingTasksPanel";
+import {
+  getDashboardMetrics,
+  getRecentTickets,
+  getUpcomingTasks,
+  getWeeklyTicketVolume,
+} from "@/features/dashboard/lib/dashboardSelectors";
 import { tickets } from "@/data/tickets";
 import { tasks } from "@/data/tasks";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
 export function DashboardPage() {
   usePageTitle("Dashboard");
+  const metrics = getDashboardMetrics(tickets, tasks);
+  const recentTickets = getRecentTickets(tickets);
+  const upcomingTasks = getUpcomingTasks(tasks);
+  const weeklyVolume = getWeeklyTicketVolume(tickets);
 
   return (
     <div className="space-y-8">
       <PageHeader
         eyebrow="Support Ops"
         title="Team dashboard"
-        description="A production-ready shell for monitoring queues, workload, and upcoming support actions before real services are connected."
+        description="A live seeded overview of queue health, recent ticket activity, and the next internal support actions."
       />
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <StatCard change="+8% from last week" icon={Inbox} title="Open tickets" tone="brand" value={tickets.length} />
-        <StatCard change="3 tasks due today" icon={ListChecks} title="Active tasks" value={tasks.length} />
-        <StatCard change="Median first reply 18m" icon={Clock3} title="SLA at risk" value="06" />
-        <StatCard change="Steady backlog trend" icon={TrendingUp} title="CSAT trend" value="94%" />
-      </section>
+      <DashboardStats metrics={metrics} />
 
-      <TicketVolumeChart />
-      <QueueSnapshot />
+      <TicketVolumeChartCard data={weeklyVolume} />
+
+      <section className="grid gap-6 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+        <RecentTicketsCard tickets={recentTickets} />
+        <UpcomingTasksPanel tasks={upcomingTasks} />
+      </section>
     </div>
   );
 }

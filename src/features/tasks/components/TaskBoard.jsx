@@ -1,5 +1,6 @@
 import { tasks } from "@/data/tasks";
 import { StatusBadge } from "@/components/ui/StatusBadge";
+import { formatLongDate } from "@/lib/utils";
 
 export function TaskBoard() {
   return (
@@ -24,7 +25,7 @@ export function TaskBoard() {
             </div>
             <div className="flex items-center justify-between gap-4">
               <dt>Due date</dt>
-              <dd>{task.dueDate}</dd>
+              <dd>{formatLongDate(task.dueDate)}</dd>
             </div>
           </dl>
         </article>
