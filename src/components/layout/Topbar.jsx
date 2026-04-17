@@ -1,9 +1,16 @@
-import { Bell, Search } from "lucide-react";
+import { Bell, LogOut, Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { StatusBadge } from "@/components/ui/StatusBadge";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/hooks/useAuth";
 
 export function Topbar() {
-  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login", { replace: true });
+  };
 
   return (
     <header className="flex flex-col gap-4 rounded-[28px] border border-slate-200 bg-white/80 px-5 py-4 shadow-panel backdrop-blur sm:flex-row sm:items-center sm:justify-between">
@@ -17,6 +24,15 @@ export function Topbar() {
       </div>
 
       <div className="flex items-center gap-4">
+        <button
+          className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-600 transition hover:border-rose-200 hover:text-rose-600"
+          onClick={handleLogout}
+          type="button"
+        >
+          <LogOut className="h-4 w-4" />
+          Log out
+        </button>
+
         <button
           aria-label="Notifications"
           className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 transition hover:border-brand-200 hover:text-brand-700"
