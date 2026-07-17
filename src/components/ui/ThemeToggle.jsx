@@ -10,8 +10,8 @@ export function ThemeToggle({ compact = false, showLabel = true }) {
       aria-label="Toggle theme"
       className={cn(
         "inline-flex items-center gap-2 rounded-2xl border px-4 py-3 text-sm font-semibold transition",
-        "border-slate-200 bg-white text-slate-700 hover:border-brand-200 hover:text-brand-700",
-        "dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-brand-500 dark:hover:text-brand-300",
+        "border-[#D0D7DE] bg-white text-slate-700 hover:border-brand-200 hover:bg-slate-50 hover:text-brand-700",
+        "dark:border-[#30363D] dark:bg-[#161B22] dark:text-[#8B949E] dark:hover:border-[#2F81F7] dark:hover:bg-[#0B0E14] dark:hover:text-[#F0F6FC]",
         compact ? "h-11 w-11 justify-center px-0 py-0" : "",
       )}
       onClick={toggleTheme}

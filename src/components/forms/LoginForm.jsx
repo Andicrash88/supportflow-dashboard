@@ -42,13 +42,13 @@ export function LoginForm() {
   return (
     <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Work email</span>
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100 dark:border-slate-700 dark:bg-slate-900 dark:focus-within:border-brand-500 dark:focus-within:ring-brand-900/40">
-          <Mail className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+        <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-[#F0F6FC]">Work email</span>
+        <div className="flex items-center gap-3 rounded-2xl border border-[#D0D7DE] bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100 dark:border-[#30363D] dark:bg-[#0B0E14] dark:focus-within:border-[#2F81F7] dark:focus-within:ring-[#2F81F7]/10">
+          <Mail className="h-4 w-4 text-slate-400 dark:text-[#8B949E]" />
           <input
             {...register("email")}
             autoComplete="email"
-            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
+            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-[#F0F6FC] dark:placeholder:text-[#8B949E]"
             placeholder="name@company.com"
             type="email"
           />
@@ -57,13 +57,13 @@ export function LoginForm() {
       </label>
 
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Password</span>
-        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100 dark:border-slate-700 dark:bg-slate-900 dark:focus-within:border-brand-500 dark:focus-within:ring-brand-900/40">
-          <LockKeyhole className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+        <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-[#F0F6FC]">Password</span>
+        <div className="flex items-center gap-3 rounded-2xl border border-[#D0D7DE] bg-white px-4 py-3 shadow-sm transition focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100 dark:border-[#30363D] dark:bg-[#0B0E14] dark:focus-within:border-[#2F81F7] dark:focus-within:ring-[#2F81F7]/10">
+          <LockKeyhole className="h-4 w-4 text-slate-400 dark:text-[#8B949E]" />
           <input
             {...register("password")}
             autoComplete="current-password"
-            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
+            className="w-full border-none bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-[#F0F6FC] dark:placeholder:text-[#8B949E]"
             placeholder="Enter your password"
             type="password"
           />

@@ -66,7 +66,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
         <div className="grid gap-5 md:grid-cols-2">
           <Field label="Ticket title" required>
             <input
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+              className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
               name="subject"
               onChange={handleChange}
               placeholder="Describe the customer issue"
@@ -77,7 +77,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
           </Field>
           <Field label="Requester" required>
             <input
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+              className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
               name="requester"
               onChange={handleChange}
               placeholder="Customer or account name"
@@ -88,7 +88,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
           </Field>
           <Field label="Priority">
             <select
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+              className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
               name="priority"
               onChange={handleChange}
               value={formValues.priority}
@@ -102,7 +102,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
           </Field>
           <Field label="Status">
             <select
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+              className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
               name="status"
               onChange={handleChange}
               value={formValues.status}
@@ -116,7 +116,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
           </Field>
           <Field label="Assignee" required>
             <input
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+              className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
               name="assignee"
               onChange={handleChange}
               placeholder="Assigned teammate"
@@ -127,7 +127,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
           </Field>
           <Field label="Channel">
             <select
-              className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+              className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
               name="channel"
               onChange={handleChange}
               value={formValues.channel}
@@ -141,9 +141,9 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
           </Field>
         </div>
 
-        <div className="flex items-center justify-end gap-3 border-t border-slate-200 pt-5 dark:border-slate-800">
+        <div className="flex items-center justify-end gap-3 border-t border-[#D0D7DE] pt-5 dark:border-[#30363D]">
           <button
-            className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:text-slate-50"
+            className="rounded-2xl border border-[#D0D7DE] bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#8B949E] dark:hover:border-[#2F81F7] dark:hover:text-[#F0F6FC]"
             onClick={onClose}
             type="button"
           >
@@ -164,7 +164,7 @@ export function TicketFormModal({ mode, ticket, onClose, onSubmit }) {
 function Field({ children, label, required = false }) {
   return (
     <label className="block">
-      <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+      <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-[#8B949E]">
         {label}
         {required ? " *" : ""}
       </span>

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  color: #081018;
-  background-color: #f8fafc;
+  color: #1f2328;
+  background-color: #f6f8fa;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -12,8 +12,8 @@
 }
 
 :root.dark {
-  color: #e2e8f0;
-  background-color: #020617;
+  color: #f0f6fc;
+  background-color: #0b0e14;
   color-scheme: dark;
 }
 
@@ -28,22 +28,12 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(circle at top, rgba(53, 127, 101, 0.18), transparent 32%),
-    linear-gradient(rgba(8, 16, 24, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(8, 16, 24, 0.04) 1px, transparent 1px);
-  background-color: #f8fafc;
-  background-size: 100% 100%, 32px 32px, 32px 32px;
+  background-color: #f6f8fa;
   transition: background-color 180ms ease, color 180ms ease;
 }
 
 :root.dark body {
-  background:
-    radial-gradient(circle at top, rgba(53, 127, 101, 0.16), transparent 35%),
-    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-  background-color: #020617;
-  background-size: 100% 100%, 32px 32px, 32px 32px;
+  background-color: #0b0e14;
 }
 
 button,

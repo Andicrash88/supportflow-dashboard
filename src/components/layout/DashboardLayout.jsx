@@ -12,7 +12,7 @@ export function DashboardLayout() {
 
         <div className="flex min-h-full flex-col gap-4">
           <Topbar />
-          <main className="flex-1 rounded-[28px] border border-white/50 bg-white/75 p-5 shadow-panel backdrop-blur dark:border-slate-800 dark:bg-slate-950/70 sm:p-8">
+          <main className="flex-1 rounded-[28px] border border-[#D0D7DE] bg-white p-5 shadow-panel dark:border-[#30363D] dark:bg-[#161B22] sm:p-8">
             <Outlet />
           </main>
         </div>

@@ -11,14 +11,14 @@ const navigation = [
 
 export function Sidebar() {
   return (
-    <aside className="flex h-full w-full flex-col rounded-[28px] border border-white/60 bg-ink-950 px-5 py-6 text-white shadow-panel dark:border-slate-800 dark:bg-slate-950">
-      <div className="flex items-center gap-3 border-b border-white/10 pb-6">
+    <aside className="flex h-full w-full flex-col rounded-[28px] border border-[#D0D7DE] bg-ink-950 px-5 py-6 text-white shadow-panel dark:border-[#30363D] dark:bg-[#161B22]">
+      <div className="flex items-center gap-3 border-b border-white/10 pb-6 dark:border-[#30363D]">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-600">
           <LifeBuoy className="h-5 w-5" />
         </div>
         <div>
           <p className="text-lg font-semibold tracking-tight">SupportFlow</p>
-          <p className="text-sm text-slate-400">Ops command center</p>
+          <p className="text-sm text-slate-400 dark:text-[#8B949E]">Ops command center</p>
         </div>
       </div>
 
@@ -29,7 +29,9 @@ export function Sidebar() {
             className={({ isActive }) =>
               cn(
                 "flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition",
-                isActive ? "bg-white text-slate-950" : "text-slate-300 hover:bg-white/10 hover:text-white",
+                isActive
+                  ? "bg-white text-slate-950 dark:bg-[#0B0E14] dark:text-[#F0F6FC]"
+                  : "text-slate-300 hover:bg-white/10 hover:text-white dark:text-[#8B949E] dark:hover:bg-[#0B0E14] dark:hover:text-[#F0F6FC]",
               )
             }
             to={to}
@@ -40,9 +42,9 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="mt-auto rounded-3xl bg-white/5 p-4 dark:bg-slate-900/80">
+      <div className="mt-auto rounded-3xl bg-white/5 p-4 dark:border dark:border-[#30363D] dark:bg-[#0B0E14]">
         <p className="text-sm font-medium">Workspace polish</p>
-        <p className="mt-2 text-sm leading-6 text-slate-400">
+        <p className="mt-2 text-sm leading-6 text-slate-400 dark:text-[#8B949E]">
           Profile preferences, tickets, tasks, and dashboard workflows now share persistent local state.
         </p>
       </div>

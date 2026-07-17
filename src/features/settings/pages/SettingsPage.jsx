@@ -48,15 +48,15 @@ export function SettingsPage() {
       />
 
       <section className="grid gap-6 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,0.9fr)]">
-        <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-panel dark:border-slate-800 dark:bg-slate-950">
+        <article className="rounded-2xl border border-[#D0D7DE] bg-white p-6 shadow-panel transition duration-200 hover:shadow-[0_16px_28px_rgba(15,23,42,0.08)] dark:border-[#30363D] dark:bg-[#161B22] dark:hover:shadow-[0_18px_32px_rgba(2,6,23,0.35)]">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h2 className="text-lg font-semibold text-slate-950 dark:text-slate-50">Profile settings</h2>
-              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+              <h2 className="text-lg font-semibold text-slate-950 dark:text-[#F0F6FC]">Profile settings</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
                 Update the locally stored profile shown across the dashboard, topbar, and settings workspace.
               </p>
             </div>
-            <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-brand-100 text-lg font-semibold text-brand-800 dark:bg-brand-900/40 dark:text-brand-200">
+            <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-brand-100 text-lg font-semibold text-brand-800 dark:bg-[#0B0E14] dark:text-[#2F81F7]">
               {getInitials(formValues.name)}
             </div>
           </div>
@@ -65,7 +65,7 @@ export function SettingsPage() {
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Full name">
                 <input
-                  className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+                  className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
                   name="name"
                   onChange={handleChange}
                   required
@@ -76,7 +76,7 @@ export function SettingsPage() {
 
               <Field label="Work email">
                 <input
-                  className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-300 focus:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-brand-500 dark:focus:bg-slate-950"
+                  className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-300 focus:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#F0F6FC] dark:focus:border-[#2F81F7] dark:focus:bg-[#161B22]"
                   name="email"
                   onChange={handleChange}
                   required
@@ -87,7 +87,7 @@ export function SettingsPage() {
 
               <Field label="Role">
                 <input
-                  className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-500 outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                  className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-100 px-4 py-3 text-sm text-slate-500 outline-none dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#8B949E]"
                   readOnly
                   type="text"
                   value={user.role}
@@ -96,7 +96,7 @@ export function SettingsPage() {
 
               <Field label="Team">
                 <input
-                  className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-500 outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                  className="mt-2 w-full rounded-2xl border border-[#D0D7DE] bg-slate-100 px-4 py-3 text-sm text-slate-500 outline-none dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#8B949E]"
                   readOnly
                   type="text"
                   value={user.team}
@@ -104,13 +104,13 @@ export function SettingsPage() {
               </Field>
             </div>
 
-            <div className="flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+            <div className="flex flex-col gap-3 border-t border-[#D0D7DE] pt-5 dark:border-[#30363D] sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-slate-500 dark:text-[#8B949E]">
                 These changes are stored locally in this browser so the demo feels like a real workspace.
               </p>
               <div className="flex items-center gap-3">
                 {isSaved ? (
-                  <span className="inline-flex items-center gap-2 rounded-2xl bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
+                  <span className="inline-flex items-center gap-2 rounded-2xl bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:bg-[#238636]/12 dark:text-[#238636]">
                     <Check className="h-4 w-4" />
                     Saved
                   </span>
@@ -127,11 +127,11 @@ export function SettingsPage() {
         </article>
 
         <div className="space-y-6">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-panel dark:border-slate-800 dark:bg-slate-950">
+          <article className="rounded-2xl border border-[#D0D7DE] bg-white p-6 shadow-panel transition duration-200 hover:shadow-[0_16px_28px_rgba(15,23,42,0.08)] dark:border-[#30363D] dark:bg-[#161B22] dark:hover:shadow-[0_18px_32px_rgba(2,6,23,0.35)]">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h2 className="text-lg font-semibold text-slate-950 dark:text-slate-50">Theme</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                <h2 className="text-lg font-semibold text-slate-950 dark:text-[#F0F6FC]">Theme</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
                   Choose the workspace appearance that feels best for long support sessions.
                 </p>
               </div>
@@ -156,34 +156,34 @@ export function SettingsPage() {
             </div>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-panel dark:border-slate-800 dark:bg-slate-950">
+          <article className="rounded-2xl border border-[#D0D7DE] bg-white p-6 shadow-panel transition duration-200 hover:shadow-[0_16px_28px_rgba(15,23,42,0.08)] dark:border-[#30363D] dark:bg-[#161B22] dark:hover:shadow-[0_18px_32px_rgba(2,6,23,0.35)]">
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-800 dark:bg-brand-900/40 dark:text-brand-200">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-800 dark:bg-[#0B0E14] dark:text-[#2F81F7]">
                 <UserRound className="h-5 w-5" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-slate-950 dark:text-slate-50">Workspace preview</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                <h2 className="text-lg font-semibold text-slate-950 dark:text-[#F0F6FC]">Workspace preview</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
                   Your profile details are reused throughout the shell so the experience feels consistent and portfolio-ready.
                 </p>
               </div>
             </div>
 
-            <div className="mt-5 rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900">
+            <div className="mt-5 rounded-3xl border border-[#D0D7DE] bg-slate-50 p-5 dark:border-[#30363D] dark:bg-[#0B0E14]">
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-brand-100 font-semibold text-brand-800 dark:bg-brand-900/40 dark:text-brand-200">
+                <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-brand-100 font-semibold text-brand-800 dark:bg-[#161B22] dark:text-[#2F81F7]">
                   {getInitials(formValues.name)}
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-slate-950 dark:text-slate-50">{formValues.name}</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{formValues.email}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
+                  <p className="text-base font-semibold text-slate-950 dark:text-[#F0F6FC]">{formValues.name}</p>
+                  <p className="text-sm text-slate-500 dark:text-[#8B949E]">{formValues.email}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400 dark:text-[#8B949E]">
                     {user.role}
                   </p>
                 </div>
               </div>
-              <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                Current interface mode: <span className="font-medium text-slate-900 dark:text-slate-200">{isDarkMode ? "Dark" : "Light"}</span>
+              <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
+                Current interface mode: <span className="font-medium text-slate-900 dark:text-[#F0F6FC]">{isDarkMode ? "Dark" : "Light"}</span>
               </p>
             </div>
           </article>
@@ -196,7 +196,7 @@ export function SettingsPage() {
 function Field({ children, label }) {
   return (
     <label className="block">
-      <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">{label}</span>
+      <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-[#8B949E]">{label}</span>
       {children}
     </label>
   );
@@ -208,21 +208,21 @@ function ThemeOption({ active, description, icon: Icon, label, onClick }) {
       className={[
         "flex items-start gap-4 rounded-2xl border px-4 py-4 text-left transition",
         active
-          ? "border-brand-300 bg-brand-50 text-slate-900 dark:border-brand-500 dark:bg-brand-900/20 dark:text-slate-100"
-          : "border-slate-200 bg-slate-50 text-slate-700 hover:border-brand-200 hover:bg-white dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-brand-600 dark:hover:bg-slate-950",
+          ? "border-brand-300 bg-brand-50 text-slate-900 dark:border-[#2F81F7] dark:bg-[#2F81F7]/10 dark:text-[#F0F6FC]"
+          : "border-[#D0D7DE] bg-slate-50 text-slate-700 hover:border-brand-200 hover:bg-white dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#8B949E] dark:hover:border-[#2F81F7] dark:hover:bg-[#161B22]",
       ].join(" ")}
       onClick={onClick}
       type="button"
     >
-      <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-brand-700 dark:bg-slate-950 dark:text-brand-300">
+      <div className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-brand-700 dark:bg-[#161B22] dark:text-[#2F81F7]">
         <Icon className="h-4 w-4" />
       </div>
       <div className="flex-1">
         <div className="flex items-center justify-between gap-3">
           <p className="font-semibold">{label}</p>
-          {active ? <Check className="h-4 w-4 text-brand-700 dark:text-brand-300" /> : null}
+          {active ? <Check className="h-4 w-4 text-brand-700 dark:text-[#2F81F7]" /> : null}
         </div>
-        <p className="mt-1 text-sm leading-6 text-slate-500 dark:text-slate-400">{description}</p>
+        <p className="mt-1 text-sm leading-6 text-slate-500 dark:text-[#8B949E]">{description}</p>
       </div>
     </button>
   );

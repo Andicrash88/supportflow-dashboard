@@ -2,14 +2,14 @@ import { ListTodo } from "lucide-react";
 
 export function TaskListEmptyState({ hasTasks, onCreate, onResetFilters }) {
   return (
-    <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 px-6 py-12 text-center dark:border-slate-800 dark:bg-slate-900">
-      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-sm dark:bg-slate-950 dark:text-brand-300">
+    <div className="rounded-2xl border border-dashed border-[#D0D7DE] bg-slate-50 px-6 py-12 text-center dark:border-[#30363D] dark:bg-[#0B0E14]">
+      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-sm dark:bg-[#161B22] dark:text-[#2F81F7]">
         <ListTodo className="h-6 w-6" />
       </div>
-      <h3 className="mt-4 text-lg font-semibold text-slate-950 dark:text-slate-50">
+      <h3 className="mt-4 text-lg font-semibold text-slate-950 dark:text-[#F0F6FC]">
         {hasTasks ? "No tasks match these filters" : "No tasks in the queue yet"}
       </h3>
-      <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+      <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
         {hasTasks
           ? "Try adjusting search, status, category, or sort options to widen the task view."
           : "Create the first local task to start managing internal operations work in this demo."}
@@ -17,7 +17,7 @@ export function TaskListEmptyState({ hasTasks, onCreate, onResetFilters }) {
       <div className="mt-6 flex items-center justify-center gap-3">
         {hasTasks ? (
           <button
-            className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-200 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-brand-500 dark:hover:text-brand-300"
+            className="rounded-2xl border border-[#D0D7DE] bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-200 hover:bg-slate-50 hover:text-brand-700 dark:border-[#30363D] dark:bg-[#161B22] dark:text-[#8B949E] dark:hover:border-[#2F81F7] dark:hover:text-[#F0F6FC]"
             onClick={onResetFilters}
             type="button"
           >
