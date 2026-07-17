@@ -77,9 +77,11 @@ Preview the production build:
 npm run preview
 ```
 
-## Demo Login
+## Live Demo
 
-Use any valid email address and any password with at least 6 characters.
+https://supportflow-dashboard.vercel.app
+
+Use any valid email address and a password with at least 6 characters to access the local demo.
 
 Suggested demo values:
 
@@ -98,13 +100,6 @@ Add screenshots before publishing the repository:
 - Settings view: `docs/screenshots/settings.png`
 - Mobile view: `docs/screenshots/mobile.png`
 
-## Live Demo
-
-Live demo URL:
-
-```text
-https://your-vercel-deployment-url.vercel.app
-```
 
 ## Technical Decisions
 
