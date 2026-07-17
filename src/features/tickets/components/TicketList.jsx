@@ -19,7 +19,7 @@ export function TicketList({
   return (
     <div className="overflow-hidden rounded-2xl border border-[#D0D7DE] bg-white shadow-panel transition duration-200 hover:shadow-[0_16px_28px_rgba(15,23,42,0.08)] dark:border-[#30363D] dark:bg-[#161B22] dark:hover:shadow-[0_18px_32px_rgba(2,6,23,0.35)]">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-[#30363D]">
+        <table className="min-w-[920px] divide-y divide-slate-200 text-left text-sm dark:divide-[#30363D]">
           <thead className="bg-slate-50 dark:bg-[#0B0E14]">
             <tr className="text-slate-500 dark:text-[#8B949E]">
               <th className="px-5 py-4 font-medium">Ticket</th>

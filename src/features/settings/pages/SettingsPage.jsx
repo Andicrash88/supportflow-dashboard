@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
-import { Check, Moon, SunMedium, UserRound } from "lucide-react";
+import { Check, Moon, RotateCcw, SunMedium, UserRound } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { useAuth } from "@/hooks/useAuth";
 import { useTheme } from "@/hooks/useTheme";
 import { usePageTitle } from "@/hooks/usePageTitle";
+import { useTasks } from "@/hooks/useTasks";
+import { useTickets } from "@/hooks/useTickets";
 import { getInitials } from "@/lib/utils";
 
 export function SettingsPage() {
   usePageTitle("Settings");
   const { updateProfile, user } = useAuth();
+  const { resetTasks } = useTasks();
+  const { resetTickets } = useTickets();
   const { isDarkMode, setTheme, theme } = useTheme();
   const [formValues, setFormValues] = useState({
     name: user.name,
     email: user.email,
   });
   const [isSaved, setIsSaved] = useState(false);
+  const [isReset, setIsReset] = useState(false);
 
   useEffect(() => {
     setFormValues({
@@ -28,6 +33,7 @@ export function SettingsPage() {
     const { name, value } = event.target;
     setFormValues((currentValues) => ({ ...currentValues, [name]: value }));
     setIsSaved(false);
+    setIsReset(false);
   };
 
   const handleSubmit = (event) => {
@@ -37,6 +43,16 @@ export function SettingsPage() {
       email: formValues.email.trim().toLowerCase(),
     });
     setIsSaved(true);
+    setIsReset(false);
+  };
+
+  const handleResetDemoData = () => {
+    if (window.confirm("Reset ticket and task demo data to the seeded portfolio state?")) {
+      resetTickets();
+      resetTasks();
+      setIsReset(true);
+      setIsSaved(false);
+    }
   };
 
   return (
@@ -110,7 +126,7 @@ export function SettingsPage() {
               </p>
               <div className="flex items-center gap-3">
                 {isSaved ? (
-                  <span className="inline-flex items-center gap-2 rounded-2xl bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:bg-[#238636]/12 dark:text-[#238636]">
+                  <span aria-live="polite" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:bg-[#238636]/12 dark:text-[#3FB950]">
                     <Check className="h-4 w-4" />
                     Saved
                   </span>
@@ -174,9 +190,9 @@ export function SettingsPage() {
                 <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-brand-100 font-semibold text-brand-800 dark:bg-[#161B22] dark:text-[#2F81F7]">
                   {getInitials(formValues.name)}
                 </div>
-                <div>
-                  <p className="text-base font-semibold text-slate-950 dark:text-[#F0F6FC]">{formValues.name}</p>
-                  <p className="text-sm text-slate-500 dark:text-[#8B949E]">{formValues.email}</p>
+                <div className="min-w-0">
+                  <p className="truncate text-base font-semibold text-slate-950 dark:text-[#F0F6FC]">{formValues.name}</p>
+                  <p className="truncate text-sm text-slate-500 dark:text-[#8B949E]">{formValues.email}</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400 dark:text-[#8B949E]">
                     {user.role}
                   </p>
@@ -185,6 +201,39 @@ export function SettingsPage() {
               <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
                 Current interface mode: <span className="font-medium text-slate-900 dark:text-[#F0F6FC]">{isDarkMode ? "Dark" : "Light"}</span>
               </p>
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[#D0D7DE] bg-white p-6 shadow-panel transition duration-200 hover:shadow-[0_16px_28px_rgba(15,23,42,0.08)] dark:border-[#30363D] dark:bg-[#161B22] dark:hover:shadow-[0_18px_32px_rgba(2,6,23,0.35)]">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-800 dark:bg-[#0B0E14] dark:text-[#2F81F7]">
+                <RotateCcw className="h-5 w-5" />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold text-slate-950 dark:text-[#F0F6FC]">Demo data</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-[#8B949E]">
+                  Restore the seeded tickets and tasks for a clean portfolio walkthrough.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-5 flex flex-col gap-3 border-t border-[#D0D7DE] pt-5 dark:border-[#30363D] sm:flex-row sm:items-center sm:justify-between">
+              {isReset ? (
+                <span aria-live="polite" className="inline-flex items-center gap-2 rounded-2xl bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:bg-[#238636]/12 dark:text-[#3FB950]">
+                  <Check className="h-4 w-4" />
+                  Demo data reset
+                </span>
+              ) : (
+                <span className="text-sm text-slate-500 dark:text-[#8B949E]">Local ticket and task changes will be replaced.</span>
+              )}
+              <button
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#D0D7DE] bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-200 hover:bg-slate-50 hover:text-brand-700 dark:border-[#30363D] dark:bg-[#0B0E14] dark:text-[#8B949E] dark:hover:border-[#2F81F7] dark:hover:bg-[#161B22] dark:hover:text-[#F0F6FC]"
+                onClick={handleResetDemoData}
+                type="button"
+              >
+                <RotateCcw className="h-4 w-4" />
+                Reset demo data
+              </button>
             </div>
           </article>
         </div>
@@ -205,6 +254,7 @@ function Field({ children, label }) {
 function ThemeOption({ active, description, icon: Icon, label, onClick }) {
   return (
     <button
+      aria-pressed={active}
       className={[
         "flex items-start gap-4 rounded-2xl border px-4 py-4 text-left transition",
         active

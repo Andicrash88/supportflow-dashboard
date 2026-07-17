@@ -30,9 +30,9 @@ export function TaskBoard({
 
           <dl className="mt-6 space-y-3 text-sm text-slate-600 dark:text-[#8B949E]">
             {getTaskCardRows(task).map((row) => (
-              <div className="flex items-center justify-between gap-4" key={row.label}>
-                <dt>{row.label}</dt>
-                <dd className={row.emphasized ? "font-medium text-slate-900 dark:text-[#F0F6FC]" : ""}>{row.value}</dd>
+              <div className="flex items-start justify-between gap-4" key={row.label}>
+                <dt className="shrink-0">{row.label}</dt>
+                <dd className={["min-w-0 break-words text-right", row.emphasized ? "font-medium text-slate-900 dark:text-[#F0F6FC]" : ""].join(" ")}>{row.value}</dd>
               </div>
             ))}
           </dl>

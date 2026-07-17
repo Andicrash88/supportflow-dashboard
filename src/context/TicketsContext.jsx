@@ -57,6 +57,10 @@ export function TicketsProvider({ children }) {
       deleteTicket: (ticketId) => {
         setTickets((currentTickets) => currentTickets.filter((ticket) => ticket.id !== ticketId));
       },
+      resetTickets: () => {
+        ticketStorageService.reset();
+        setTickets(ticketStorageService.getTickets());
+      },
     }),
     [tickets],
   );

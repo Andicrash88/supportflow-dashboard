@@ -13,7 +13,7 @@ export function RecentTicketsCard({ tickets }) {
 
       {tickets.length ? (
         <div className="mt-5 overflow-x-auto">
-          <table className="min-w-full divide-y divide-slate-200 text-left text-sm dark:divide-[#30363D]">
+          <table className="min-w-[640px] divide-y divide-slate-200 text-left text-sm dark:divide-[#30363D]">
             <thead>
               <tr className="text-slate-500 dark:text-[#8B949E]">
                 <th className="pb-3 font-medium">Ticket</th>

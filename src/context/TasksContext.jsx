@@ -67,6 +67,10 @@ export function TasksProvider({ children }) {
       deleteTask: (taskId) => {
         setTasks((currentTasks) => currentTasks.filter((task) => task.id !== taskId));
       },
+      resetTasks: () => {
+        taskStorageService.reset();
+        setTasks(taskStorageService.getTasks());
+      },
     }),
     [tasks],
   );
